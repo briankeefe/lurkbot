@@ -1,0 +1,30 @@
+{
+  "subreddits": ["smallbusiness", "salon", "msp", "marketing", "agency", "dentistry"],
+  "keywords": ["reviews", "reputation", "scheduling", "online reviews", "google reviews", "yelp"],
+  "scan_interval_hours": 6,
+  "signal_patterns": {
+    "pain_signals": [
+      "I hate",
+      "frustrated",
+      "wish there was",
+      "anyone know a tool",
+      "looking for a tool",
+      "is there a way to"
+    ],
+    "excel_signals": [
+      "spreadsheet",
+      "google sheets", 
+      "excel",
+      "manually track",
+      "copy paste",
+      "manual process"
+    ],
+    "tool_complaints": [
+      "too expensive",
+      "doesn't have",
+      "missing feature", 
+      "switching from",
+      "alternative to"
+    ]
+  }
+}

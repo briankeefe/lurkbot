@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  lurkbot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: lurkbot-app
+    restart: unless-stopped
+    stop_grace_period: 30s
+    
+    ports:
+      - "5200:5200"
+    
+    volumes:
+      - ./data:/app/data
+      - ./config.json:/app/config.json:ro
+    
+    environment:
+      - PYTHONUNBUFFERED=1
+    
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5200/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+    
+    stop_signal: SIGTERM
